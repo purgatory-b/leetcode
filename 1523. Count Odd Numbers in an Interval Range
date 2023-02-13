@@ -1,0 +1,9 @@
+//Runtime  36 ms
+//Beats   40.97%
+//Memory 13.8 MB
+
+class Solution:
+    def countOdds(self, low: int, high: int) -> int:
+        if low % 2 == 0 :
+            return (high - low +1 )//2
+        return (high - low )//2 +1
