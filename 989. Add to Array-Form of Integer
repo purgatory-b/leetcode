@@ -1,0 +1,19 @@
+# Runtime 321 ms
+# Beats   64.23%
+# Memory 15.1 MB
+# Beats   36.53%
+
+
+class Solution:
+    def addToArrayForm(self, num: List[int], k: int) -> List[int]:
+        add_num = ''
+        res_list = []
+        for i in num:
+           add_num +=str(i)
+        
+        res = int(add_num)+k
+        
+        for i in str(res):
+            res_list.append(int(i))
+
+        return res_list
