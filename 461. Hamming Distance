@@ -1,0 +1,14 @@
+# Runtime  31 ms
+# Beats   72.98%
+# Memory 13.9 MB
+# Beats   49.95%
+
+
+class Solution:
+    def hammingDistance(self, x: int, y: int) -> int:
+        tmp = x ^ y
+        res = 0
+        while tmp > 0:
+            res += tmp & 1
+            tmp >>= 1
+        return res
