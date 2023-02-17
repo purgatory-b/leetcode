@@ -1,0 +1,23 @@
+# Runtime 33 ms
+# Beats  67.95%
+# Memory  14 MB
+# Beats  32.63%
+
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def minDiffInBST(self, root: Optional[TreeNode]) -> int:
+        res = []
+        def inOrder(root):
+            if not root:
+                return 
+            inOrder(root.left)
+            res.append(root.val)
+            inOrder(root.right)
+        inOrder(root)
+        return min([res[i + 1] - res[i] for i in range(len(res) - 1)])
