@@ -1,0 +1,32 @@
+# Runtime  31 ms
+# Beats   74.23%
+# Memory 13.9 MB
+# Beats   56.25%
+
+
+class Solution:
+    def countPoints(self, rings: str) -> int:
+        RGB={
+            0:[],
+            1:[],
+            2:[],
+            3:[],
+            4:[],
+            5:[],
+            6:[],
+            7:[],
+            8:[],
+            9:[]
+        }
+        res = 0
+        for i in range(1,len(rings),2):  
+            
+            RGB[int(rings[i])].append(rings[i-1])
+        
+        for i in RGB:
+            if RGB[i] == []:
+                pass
+            elif 'R' in RGB[i] and 'G' in RGB[i] and 'B' in RGB[i]:
+                res += 1
+        
+        return res
