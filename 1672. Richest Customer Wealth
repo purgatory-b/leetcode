@@ -1,0 +1,17 @@
+Runtime 50 ms
+Beats   92.48%
+Memory  13.9 MB
+Beats   22.67%
+
+
+class Solution:
+    def maximumWealth(self, accounts: List[List[int]]) -> int:
+        
+        res = 0
+        for i in accounts:
+            sum = 0
+            for j in i:
+                sum += j
+            if sum>res:
+                res = sum
+        return res
