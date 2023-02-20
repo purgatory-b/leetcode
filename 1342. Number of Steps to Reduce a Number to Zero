@@ -1,0 +1,16 @@
+Runtime 27 ms
+Beats   90.72%
+Memory  13.8 MB
+Beats   93.40%
+
+
+class Solution:
+    def numberOfSteps(self, num: int) -> int:
+        res = 0
+        while num > 0:
+            if num % 2 == 1:
+                num = num -1
+            else :
+                num = num //2
+            res+=1
+        return res
