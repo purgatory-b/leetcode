@@ -1,0 +1,30 @@
+Runtime 44 ms
+Beats   53.56%
+Memory  14.1 MB
+Beats   66.29%
+
+class Solution:
+    def runningSum(self, nums: List[int]) -> List[int]:
+
+        sum = 0
+        res = []
+        for i in nums:
+            sum += i
+            res.append(sum)
+        return res
+        
+Runtime 42 ms
+Beats   67.19%
+Memory  14 MB
+Beats   66.29%        
+
+
+class Solution:
+    def runningSum(self, nums: List[int]) -> List[int]:
+
+        for i in range(len(nums)):
+            if i == 0:
+                nums[0] = nums[0]
+            else:
+                nums[i] +=  nums[i-1]
+        return nums
