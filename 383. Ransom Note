@@ -1,0 +1,15 @@
+Runtime 56 ms
+Beats   66.67%
+Memory  14.2 MB
+Beats   17.63%
+
+
+from collections import Counter
+class Solution:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        ct_ransom = Counter(ransomNote)
+        ct_magazine = Counter(magazine)
+        for key in ct_ransom:
+            if ct_ransom[key] > ct_magazine[key]:
+                return False
+        return True
