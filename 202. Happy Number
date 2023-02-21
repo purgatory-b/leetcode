@@ -1,0 +1,22 @@
+Runtime 35 ms 
+Beats   74.22% 
+Memory  14 MB 
+Beats   10.81%
+
+
+class Solution:
+    def isHappy(self, n: int) -> bool:
+        def getSUM(n):
+            res = 0
+            while n>0:
+                res += (n%10)**2
+                n //= 10
+            return res
+        s = set()
+        while n!=1 and n not in s:
+            s.add(n)
+            n = getSUM(n)
+        return n==1
+
+        
+            
