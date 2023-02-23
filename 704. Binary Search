@@ -1,0 +1,13 @@
+Runtime 262 ms
+Beats   26.83%
+Memory  15.4 MB
+Beats   97.24%
+
+
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        
+        for i in range(len(nums)):
+            if nums[i] == target :
+                return i
+        return -1
