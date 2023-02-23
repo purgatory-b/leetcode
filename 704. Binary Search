@@ -11,3 +11,26 @@ class Solution:
             if nums[i] == target :
                 return i
         return -1
+
+
+Runtime 237 ms
+Beats   91.69%
+Memory  15.5 MB
+Beats   16.33%
+
+
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        
+        start = 0
+        end = len(nums)-1
+        while start <= end:
+            mid = (start+end) //2
+            if nums[mid] == target:
+                return mid
+            elif nums[mid] > target:
+                end = mid -1
+            else:
+                start = mid +1
+        
+        return -1
