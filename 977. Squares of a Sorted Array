@@ -1,0 +1,12 @@
+Runtime 229 ms
+Beats   67.40%
+Memory  16 MB
+Beats   86.39%
+
+
+class Solution:
+    def sortedSquares(self, nums: List[int]) -> List[int]:
+        for i in range(len(nums)):
+            nums[i] **= 2
+
+        return sorted(nums)
