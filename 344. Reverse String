@@ -1,0 +1,12 @@
+Runtime 198 ms
+Beats   80.80%
+Memory  18.4 MB
+Beats   80.43%
+
+
+class Solution:
+    def reverseString(self, s: List[str]) -> None:
+        """
+        Do not return anything, modify s in-place instead.
+        """
+        s.reverse()
