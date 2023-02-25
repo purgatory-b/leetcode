@@ -1,0 +1,17 @@
+Runtime 131 ms
+Beats   73.55%
+Memory  14.8 MB
+Beats   83.74%
+
+
+class Solution:
+    def twoSum(self, numbers: list, target: int) :
+        left = 0
+        right = len(numbers)-1
+        while (left<right):
+            if numbers[right] + numbers[left] > target:
+                right-=1
+            elif numbers[right] + numbers[left] < target:
+                left+=1
+            else:
+                return left+1,right+1    
