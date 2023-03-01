@@ -1,0 +1,9 @@
+Runtime 679 ms
+Beats   93.53%
+Memory  21.9 MB
+Beats   68.37%
+
+
+class Solution:
+    def sortArray(self, nums: List[int]) -> List[int]:
+        return sorted(nums)
