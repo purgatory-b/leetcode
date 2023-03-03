@@ -1,0 +1,31 @@
+Runtime 722 ms
+Beats   50.96%
+Memory  16.9 MB
+Beats   79.39%
+
+
+class Solution:
+    def updateMatrix(self, mat: List[List[int]]) -> List[List[int]]:
+        res = deque()
+
+        for i in range(len(mat)):
+            for j in range(len(mat[0])):
+                if mat[i][j] == 0:
+                    res.append((i,j))
+                else:
+                    mat[i][j] = float('inf')
+
+        dir = ((0,1),(1,0),(-1,0),(0,-1))
+        
+        while res:
+            for count in range(len(res)):
+                i, j = res.popleft()
+
+                for x, y in dir:
+                    row, col = i + x, j + y
+
+                    if -1 < row < len(mat) and -1 < col < len(mat[0]) and mat[row][col] > mat[i][j] + 1:
+                        mat[row][col] = mat[i][j] + 1
+                        res.append((row, col))
+
+        return mat
