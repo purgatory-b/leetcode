@@ -1,0 +1,16 @@
+Runtime 36 ms
+Beats   34.21%
+Memory  13.8 MB
+Beats   93.90%
+
+
+class Solution:
+    def climbStairs(self, n: int):
+
+        Floor = [0,1,2]
+
+        for i in range(3,n+1):
+
+            Floor.append(Floor[i-1] + Floor[i-2])
+        
+        return Floor[n]
