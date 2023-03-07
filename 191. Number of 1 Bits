@@ -1,0 +1,9 @@
+Runtime 38 ms
+Beats   32.13%
+Memory  13.9 MB
+Beats   40.53%
+
+
+class Solution:
+    def hammingWeight(self, n: int) -> int:
+        return bin(n).count('1')
