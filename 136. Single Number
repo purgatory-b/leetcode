@@ -1,0 +1,13 @@
+Runtime 3712 ms
+Beats   13.33%
+Memory  17.1 MB
+Beats   9.83%
+
+
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        new_list = list(set(nums))
+        for i in new_list:
+            n = nums.count(i)
+            if n == 1:
+                return i
