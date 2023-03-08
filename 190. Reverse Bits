@@ -1,0 +1,12 @@
+Runtime 34 ms
+Beats   66.59%
+Memory  13.8 MB
+Beats   39.20%
+
+
+class Solution:
+    def reverseBits(self, n: int) -> int:
+        
+        bins = bin(n)[2:][::-1]
+        res = (bins + '0'*(32-len(bins)))
+        return int(res,2)
