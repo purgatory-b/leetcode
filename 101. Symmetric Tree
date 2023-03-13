@@ -1,0 +1,25 @@
+Runtime 39 ms
+Beats   43.16%
+Memory  13.9 MB
+Beats   52.29%
+
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def isSymmetric(self, root: Optional[TreeNode]) -> bool:
+        if not root:
+            return True
+        else: 
+            return self.isSym(root.left,root.right)
+    def isSym(self , right,left):
+        if not left or not right:
+            return left == right
+        if left.val != right.val:
+            return False
+        else :
+            return self.isSym(left.left,right.right) and self.isSym(left.right,right.left)
