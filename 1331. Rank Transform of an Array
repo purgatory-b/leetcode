@@ -1,0 +1,20 @@
+Runtime 342 ms
+Beats   85.22%
+Memory  32.9 MB
+Beats   56.7%
+
+
+class Solution:
+    def arrayRankTransform(self, arr: List[int]) -> List[int]:
+        
+        res={}
+        sortList = sorted(list(set(arr)))
+        for i,data in enumerate(sortList):
+            res[data] = i+1
+        for i in range(len(arr)):
+            arr[i] = res[arr[i]]
+        
+        return arr
+
+
+        
