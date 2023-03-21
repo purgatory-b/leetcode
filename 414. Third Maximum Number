@@ -1,0 +1,13 @@
+Runtime 60 ms
+Beats   33.30%
+Memory  15.3 MB
+Beats   62.1%
+
+
+class Solution:
+    def thirdMax(self, nums: List[int]) -> int:
+        res = sorted(set(nums), reverse=True)
+        print(res)
+        if len(res) <3:
+            return res[0]
+        return res[2]
