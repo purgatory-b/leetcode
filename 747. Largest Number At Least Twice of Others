@@ -1,0 +1,20 @@
+Runtime 36 ms
+Beats   71.19%
+Memory  13.8 MB
+Beats   95.11%
+
+
+class Solution:
+    def dominantIndex(self, nums: List[int]) -> int:
+        Max = max(nums)
+        count = 0
+        for i in nums:
+            i*=2
+            if i > Max:
+                count +=1
+            else:
+                pass
+        if count>1:
+            return -1
+        else:
+            return nums.index(Max)
