@@ -1,0 +1,21 @@
+Runtime 45 ms
+Beats   22.89%
+Memory  14 MB
+Beats   27.25%
+
+
+class Solution:
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+        """
+        Do not return anything, modify nums1 in-place instead.
+        """
+        if m <= 0:
+            nums1[:] = nums2
+            return 
+        if n <= 0:
+            return
+        
+        for i in range(m,m+n):
+            nums1[i] = nums2[i-m]
+        
+        nums1.sort()
