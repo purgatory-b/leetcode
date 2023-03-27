@@ -1,0 +1,19 @@
+Runtime 31 ms
+Beats   75.46%
+Memory  13.9 MB
+Beats   59.42%
+
+class Solution:
+    def isValid(self, s: str) -> bool:
+        stack = []
+        rev_pair = {')':'(', '}':'{', ']':'['}
+        for c in s:
+            if c in rev_pair:
+                if stack and stack[-1] == rev_pair[c]:
+                    print(stack[-1])
+                    stack.pop()
+                else:
+                    return False
+            else:
+                stack.append(c)
+        return not stack  
