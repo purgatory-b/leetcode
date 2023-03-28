@@ -1,0 +1,38 @@
+Runtime 27 ms
+Beats   88.20%
+Memory  13.9 MB
+Beats   62.7%
+
+
+class MyQueue:
+
+    def __init__(self):
+        self.one = []
+        self.two = []
+
+    def push(self, x: int) -> None:
+        while self.two:
+            self.one.append(self.two.pop())
+        self.one.append(x)
+
+    def pop(self) -> int:
+        while self.one:
+            self.two.append(self.one.pop())
+        return self.two.pop()
+
+    def peek(self) -> int:
+        if self.one:
+            return self.one[0]
+        else:
+            return self.two[-1]
+        
+    def empty(self) -> bool:
+        return not self.one and not self.two
+
+
+# Your MyQueue object will be instantiated and called as such:
+# obj = MyQueue()
+# obj.push(x)
+# param_2 = obj.pop()
+# param_3 = obj.peek()
+# param_4 = obj.empty()
