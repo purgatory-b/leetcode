@@ -1,0 +1,19 @@
+Runtime 148 ms
+Beats   51.27%
+Memory  14 MB
+Beats   92.33%
+
+
+class Solution:
+    def differenceOfSum(self, nums: List[int]) -> int:
+        x = sum(nums)
+        y = 0
+        for i in nums:
+            if i <10:
+                y+=i
+            else:
+                z = str(i)
+                for j in z:
+                    y += int(j)
+
+        return abs(x-y)
