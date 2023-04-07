@@ -1,0 +1,14 @@
+Runtime 34 ms
+Beats   42.51%
+Memory  13.9 MB
+Beats   42.95%
+
+
+class Solution:
+    def alternateDigitSum(self, n: int) -> int:
+        sign = 1
+        res = 0
+        for i in str(n):
+            res+= sign*int(i)
+            sign*=-1
+        return res
